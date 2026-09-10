@@ -1,0 +1,2186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Malabar Trails | Discover Kerala Beyond the Ordinary</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* =========================
+           RESET & ROOT
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1E3A34;
+            --primary-light: #2E5249;
+            --cream: #F7F5EF;
+            --white: #FFFFFF;
+            --sage: #A8B5A2;
+            --sand: #B89B72;
+            --text: #2C2C2C;
+            --light-text: #6E6E6E;
+            --border: #DEDCD4;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "DM Sans", sans-serif;
+            background: var(--cream);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: min(1180px, 90%);
+            margin: auto;
+        }
+
+        section {
+            padding: 110px 0;
+        }
+
+        .section-tag {
+            display: inline-block;
+            color: var(--sand);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(2.8rem, 5vw, 5rem);
+            font-weight: 600;
+            line-height: 0.95;
+            color: var(--primary);
+        }
+
+        .section-description {
+            max-width: 620px;
+            color: var(--light-text);
+            margin-top: 25px;
+            font-size: 1rem;
+        }
+
+
+        /* =========================
+           BUTTONS
+        ========================== */
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 26px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 1px solid rgba(255,255,255,0.5);
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+
+        /* =========================
+   FIXED NAVBAR
+========================== */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background 0.4s ease,
+                box-shadow 0.4s ease,
+                backdrop-filter 0.4s ease;
+}
+
+nav {
+    min-height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    transition: min-height 0.4s ease;
+}
+
+
+/* =========================
+   NAVBAR AFTER SCROLL
+========================== */
+
+header.scrolled {
+    background: rgba(247, 245, 239, 0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.06);
+}
+
+header.scrolled nav {
+    min-height: 70px;
+}
+
+header.scrolled .logo,
+header.scrolled .nav-links a {
+    color: var(--primary);
+}
+
+header.scrolled .nav-cta {
+    background: var(--primary);
+    color: white !important;
+    border-color: var(--primary);
+}
+
+header.scrolled .menu-btn {
+    color: var(--primary);
+}
+
+        .logo {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.9rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-size: 0.88rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.7;
+        }
+
+        .nav-cta {
+            border: 1px solid rgba(255,255,255,0.5);
+            padding: 10px 18px;
+            border-radius: 50px;
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            color: white;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(15, 35, 30, 0.75),
+                    rgba(15, 35, 30, 0.25)
+                ),
+                url("https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=1800&q=85")
+                center/cover;
+        }
+
+        .hero-content {
+            max-width: 780px;
+            padding-top: 80px;
+        }
+
+        .hero-eyebrow {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.75rem;
+            margin-bottom: 25px;
+            opacity: 0.85;
+        }
+
+        .hero h1 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(4rem, 8vw, 8rem);
+            line-height: 0.82;
+            font-weight: 500;
+            margin-bottom: 30px;
+        }
+
+        .hero h1 span {
+            font-style: italic;
+        }
+
+        .hero p {
+            max-width: 580px;
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 35px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            writing-mode: vertical-rl;
+            opacity: 0.7;
+        }
+
+
+        /* =========================
+           INTRO
+        ========================== */
+
+        .intro {
+            text-align: center;
+            background: var(--cream);
+        }
+
+        .intro-content {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .intro-text {
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(2rem, 4vw, 3.8rem);
+            line-height: 1.15;
+            color: var(--primary);
+            margin-top: 25px;
+        }
+
+        .intro-text span {
+            font-style: italic;
+            color: var(--sand);
+        }
+
+
+        /* =========================
+           DESTINATIONS
+        ========================== */
+
+        .destinations {
+            background: white;
+        }
+
+        .destination-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin-bottom: 55px;
+            gap: 30px;
+        }
+
+        .destination-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 20px;
+        }
+
+        .destination-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 3px;
+            min-height: 430px;
+            cursor: pointer;
+        }
+
+        .destination-card:nth-child(1) {
+            grid-column: span 7;
+        }
+
+        .destination-card:nth-child(2) {
+            grid-column: span 5;
+        }
+
+        .destination-card:nth-child(3) {
+            grid-column: span 4;
+        }
+
+        .destination-card:nth-child(4) {
+            grid-column: span 8;
+        }
+
+        .destination-card img {
+            height: 100%;
+            position: absolute;
+            inset: 0;
+            transition: transform 0.6s ease;
+        }
+
+        .destination-card:hover img {
+            transform: scale(1.06);
+        }
+
+        .destination-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to top,
+                rgba(0,0,0,0.65),
+                transparent 60%
+            );
+        }
+
+        .destination-content {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            color: white;
+        }
+
+        .destination-content h3 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+
+        .destination-content p {
+            font-size: 0.85rem;
+            opacity: 0.85;
+        }
+
+
+        /* =========================
+           EXPERIENCES
+        ========================== */
+
+        .experiences {
+            background: var(--primary);
+            color: white;
+        }
+
+        .experiences .section-title {
+            color: white;
+        }
+
+        .experience-grid {
+            margin-top: 65px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: rgba(255,255,255,0.15);
+        }
+
+        .experience-item {
+            background: var(--primary);
+            padding: 45px 35px;
+            transition: 0.3s;
+        }
+
+        .experience-item:hover {
+            background: var(--primary-light);
+        }
+
+        .experience-number {
+            color: var(--sand);
+            font-size: 0.8rem;
+            margin-bottom: 50px;
+        }
+
+        .experience-item h3 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 2.2rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .experience-item p {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+
+        /* =========================
+           FEATURED JOURNEY
+        ========================== */
+
+        .journey {
+            background: var(--cream);
+        }
+
+        .journey-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 600px;
+        }
+
+        .journey-image img {
+            height: 100%;
+        }
+
+        .journey-content {
+            background: white;
+            padding: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .journey-meta {
+            color: var(--sand);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.75rem;
+            margin-bottom: 20px;
+        }
+
+        .journey-content h2 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(3rem, 5vw, 5rem);
+            line-height: 0.9;
+            color: var(--primary);
+            margin-bottom: 25px;
+        }
+
+        .journey-content p {
+            color: var(--light-text);
+            margin-bottom: 30px;
+        }
+
+        .journey-route {
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 20px 0;
+            margin-bottom: 30px;
+            color: var(--primary);
+            font-size: 0.9rem;
+            line-height: 2;
+        }
+
+
+        /* =========================
+           WHY US
+        ========================== */
+
+        .why {
+            background: white;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            margin-top: 65px;
+        }
+
+        .why-item {
+            padding: 30px;
+            border-right: 1px solid var(--border);
+        }
+
+        .why-item:last-child {
+            border-right: none;
+        }
+
+        .why-number {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 3.5rem;
+            color: var(--sage);
+        }
+
+        .why-item h3 {
+            margin: 15px 0 10px;
+            color: var(--primary);
+        }
+
+        .why-item p {
+            color: var(--light-text);
+            font-size: 0.88rem;
+        }
+
+
+        /* =========================
+           TESTIMONIAL
+        ========================== */
+
+        .testimonial {
+            background: #EAE9E1;
+            text-align: center;
+        }
+
+        .quote {
+            max-width: 900px;
+            margin: 30px auto 0;
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(2.3rem, 5vw, 5rem);
+            line-height: 1.05;
+            color: var(--primary);
+        }
+
+        .traveller {
+            margin-top: 35px;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--light-text);
+        }
+
+
+        /* =========================
+           CTA
+        ========================== */
+
+        .cta {
+            min-height: 650px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+
+            background:
+                linear-gradient(
+                    rgba(15,35,30,0.6),
+                    rgba(15,35,30,0.6)
+                ),
+                url("https://images.unsplash.com/photo-1602301414532-5d3e4c54f27e?auto=format&fit=crop&w=1800&q=85")
+                center/cover;
+        }
+
+        .cta-content {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .cta h2 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(4rem, 8vw, 7rem);
+            font-weight: 500;
+            line-height: 0.85;
+            margin-bottom: 25px;
+        }
+
+        .cta p {
+            max-width: 580px;
+            margin: 0 auto 35px;
+            color: rgba(255,255,255,0.85);
+        }
+
+        .cta .btn {
+            background: white;
+            color: var(--primary);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            background: #152C27;
+            color: white;
+            padding: 80px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 50px;
+            padding-bottom: 60px;
+        }
+
+        .footer-brand h2 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand p {
+            max-width: 300px;
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+        }
+
+        .footer-links h4 {
+            margin-bottom: 20px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .footer-bottom {
+            padding-top: 25px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .destination-card,
+            .destination-card:nth-child(n) {
+                grid-column: span 12;
+                min-height: 380px;
+            }
+
+            .experience-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .journey-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .journey-image {
+                min-height: 450px;
+            }
+
+            .journey-content {
+                padding: 60px 40px;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .why-item {
+                border-bottom: 1px solid var(--border);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            section {
+                padding: 75px 0;
+            }
+
+            .hero h1 {
+                font-size: 4.5rem;
+            }
+
+            .destination-header {
+                display: block;
+            }
+
+            .experience-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .journey-content {
+                padding: 50px 25px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+      /* =========================
+   TOUR PACKAGES
+========================== */
+
+.packages {
+    background: var(--cream);
+}
+
+.packages-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.package-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.package-card {
+    background: white;
+    border: 1px solid var(--border);
+    transition: transform 0.4s ease,
+                box-shadow 0.4s ease;
+}
+
+.package-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(30, 58, 52, 0.12);
+}
+
+.package-image {
+    height: 270px;
+    position: relative;
+    overflow: hidden;
+}
+
+.package-image img {
+    height: 100%;
+    transition: transform 0.6s ease;
+}
+
+.package-card:hover .package-image img {
+    transform: scale(1.06);
+}
+
+.package-duration {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    background: rgba(255,255,255,0.92);
+    color: var(--primary);
+    padding: 8px 14px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 30px;
+}
+
+.package-content {
+    padding: 30px;
+}
+
+.package-type {
+    color: var(--sand);
+    font-size: 0.7rem;
+    letter-spacing: 1.8px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.package-content h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2rem;
+    color: var(--primary);
+    line-height: 1;
+    margin-bottom: 15px;
+}
+
+.package-content p {
+    color: var(--light-text);
+    font-size: 0.88rem;
+    min-height: 65px;
+}
+
+.package-footer {
+    border-top: 1px solid var(--border);
+    margin-top: 25px;
+    padding-top: 20px;
+
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.package-price {
+    color: var(--primary);
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.package-price span {
+    display: block;
+    font-size: 0.68rem;
+    color: var(--light-text);
+    font-weight: 400;
+    margin-bottom: 3px;
+}
+
+.package-link {
+    font-size: 0.8rem;
+    color: var(--primary);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.package-link:hover {
+    color: var(--sand);
+}
+
+      /* =========================
+   INQUIRY FORM
+========================== */
+
+.inquiry {
+    background: var(--cream);
+}
+
+.inquiry-wrapper {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    background: white;
+    min-height: 650px;
+}
+
+.inquiry-info {
+    background: var(--primary);
+    color: white;
+    padding: 70px;
+}
+
+.inquiry-info h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(3rem, 5vw, 5rem);
+    font-weight: 500;
+    line-height: 0.9;
+    margin-bottom: 30px;
+}
+
+.inquiry-info p {
+    color: rgba(255,255,255,0.7);
+    max-width: 400px;
+}
+
+.inquiry-details {
+    margin-top: 70px;
+}
+
+.inquiry-details div {
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.inquiry-details span {
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--sand);
+    margin-bottom: 5px;
+}
+
+.inquiry-details strong {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+
+/* FORM */
+
+.inquiry-form {
+    padding: 70px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 9px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 15px;
+    border: 1px solid var(--border);
+    background: var(--cream);
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.85rem;
+    color: var(--text);
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary);
+    background: white;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.form-note {
+    margin-top: 15px;
+    font-size: 0.75rem;
+    color: var(--light-text);
+}
+
+      /* =========================
+   WHATSAPP FLOATING BUTTON
+========================== */
+
+.whatsapp-float {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #25D366;
+    border-radius: 50%;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+
+    z-index: 999;
+
+    transition: 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-5px) scale(1.05);
+}
+
+.whatsapp-float svg {
+    width: 30px;
+    height: 30px;
+    fill: white;
+}
+
+      @media (max-width: 900px) {
+
+    .packages-header {
+        display: block;
+    }
+
+    .packages-header .section-description {
+        margin-top: 25px;
+    }
+
+    .package-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .inquiry-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .inquiry-info,
+    .inquiry-form {
+        padding: 50px 35px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .inquiry-info,
+    .inquiry-form {
+        padding: 45px 22px;
+    }
+
+    .whatsapp-float {
+        width: 52px;
+        height: 52px;
+        right: 18px;
+        bottom: 18px;
+    }
+}
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+========================== -->
+
+<header>
+
+    <div class="container">
+
+        <nav>
+
+            <a href="#" class="logo">
+                Malabar Trails
+            </a>
+
+            <ul class="nav-links">
+
+                <li><a href="#home">Home</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#experiences">Experiences</a></li>
+                <li><a href="#journeys">Journeys</a></li>
+                <li><a href="#about">About</a></li>
+
+                <li>
+                    <a href="#contact" class="nav-cta">
+                        Plan Your Journey
+                    </a>
+                </li>
+
+            </ul>
+
+            <div class="menu-btn">
+                ☰
+            </div>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================
+     HERO
+========================== -->
+
+<section class="hero" id="home">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <div class="hero-eyebrow">
+                Kerala • God's Own Country
+            </div>
+
+            <h1>
+                Kerala,<br>
+                <span>One Journey</span><br>
+                at a Time.
+            </h1>
+
+            <p>
+                From mist-covered mountains to quiet backwaters,
+                discover Kerala through journeys designed to be
+                remembered long after you return home.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#destinations" class="btn btn-primary">
+                    Explore Kerala →
+                </a>
+
+                <a href="#journeys" class="btn btn-outline">
+                    View Journeys
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="hero-scroll">
+        Scroll to explore
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     INTRO
+========================== -->
+
+<section class="intro">
+
+    <div class="container">
+
+        <div class="intro-content">
+
+            <span class="section-tag">
+                The Malabar Way
+            </span>
+
+            <p class="intro-text">
+                Some journeys are not about reaching a destination.
+                They are about <span>slowing down</span>, breathing deeper,
+                and discovering places that stay with you.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     DESTINATIONS
+========================== -->
+
+<section class="destinations" id="destinations">
+
+    <div class="container">
+
+        <div class="destination-header">
+
+            <div>
+
+                <span class="section-tag">
+                    Explore Kerala
+                </span>
+
+                <h2 class="section-title">
+                    Places That<br>
+                    Stay With You.
+                </h2>
+
+            </div>
+
+            <p class="section-description">
+
+                From the misty Western Ghats to the calm Arabian Sea,
+                Kerala offers a journey through landscapes,
+                stories and unforgettable experiences.
+
+            </p>
+
+        </div>
+
+
+        <div class="destination-grid">
+
+
+            <article class="destination-card">
+
+                <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1200&q=85">
+
+                <div class="destination-overlay"></div>
+
+                <div class="destination-content">
+
+                    <h3>Munnar</h3>
+
+                    <p>
+                        Where the mountains meet the clouds.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="destination-card">
+
+                <img src="https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=1200&q=85">
+
+                <div class="destination-overlay"></div>
+
+                <div class="destination-content">
+
+                    <h3>Alleppey</h3>
+
+                    <p>
+                        Life moves differently on the backwaters.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="destination-card">
+
+                <img src="https://images.unsplash.com/photo-1588416936097-41850ab3d86d?auto=format&fit=crop&w=1200&q=85">
+
+                <div class="destination-overlay"></div>
+
+                <div class="destination-content">
+
+                    <h3>Wayanad</h3>
+
+                    <p>
+                        Into the wild and untouched.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="destination-card">
+
+                <img src="https://images.unsplash.com/photo-1602301414532-5d3e4c54f27e?auto=format&fit=crop&w=1200&q=85">
+
+                <div class="destination-overlay"></div>
+
+                <div class="destination-content">
+
+                    <h3>Varkala</h3>
+
+                    <p>
+                        Cliffs, sunsets and endless horizons.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     EXPERIENCES
+========================== -->
+
+<section class="experiences" id="experiences">
+
+    <div class="container">
+
+        <span class="section-tag">
+            More Than Sightseeing
+        </span>
+
+        <h2 class="section-title">
+            Travel Beyond<br>
+            The Ordinary.
+        </h2>
+
+
+        <div class="experience-grid">
+
+
+            <div class="experience-item">
+
+                <div class="experience-number">
+                    01
+                </div>
+
+                <h3>
+                    Backwater Living
+                </h3>
+
+                <p>
+                    Drift through quiet waterways and experience
+                    life at Kerala's natural rhythm.
+                </p>
+
+            </div>
+
+
+            <div class="experience-item">
+
+                <div class="experience-number">
+                    02
+                </div>
+
+                <h3>
+                    Into The Wild
+                </h3>
+
+                <p>
+                    Explore forests, wildlife and landscapes
+                    untouched by the rush of everyday life.
+                </p>
+
+            </div>
+
+
+            <div class="experience-item">
+
+                <div class="experience-number">
+                    03
+                </div>
+
+                <h3>
+                    Taste Kerala
+                </h3>
+
+                <p>
+                    Discover local flavours, spices and stories
+                    through authentic Kerala cuisine.
+                </p>
+
+            </div>
+
+
+            <div class="experience-item">
+
+                <div class="experience-number">
+                    04
+                </div>
+
+                <h3>
+                    Mountain Escapes
+                </h3>
+
+                <p>
+                    Wake up above the clouds and explore
+                    Kerala's breathtaking hill country.
+                </p>
+
+            </div>
+
+
+            <div class="experience-item">
+
+                <div class="experience-number">
+                    05
+                </div>
+
+                <h3>
+                    Coastal Journeys
+                </h3>
+
+                <p>
+                    Follow Kerala's coastline through beaches,
+                    fishing villages and unforgettable sunsets.
+                </p>
+
+            </div>
+
+
+            <div class="experience-item">
+
+                <div class="experience-number">
+                    06
+                </div>
+
+                <h3>
+                    Wellness & Ayurveda
+                </h3>
+
+                <p>
+                    Slow down, reconnect and experience
+                    Kerala's ancient traditions of wellbeing.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+  <!-- =========================
+     TOUR PACKAGES
+========================== -->
+
+<section class="packages" id="packages">
+
+    <div class="container">
+
+        <div class="packages-header">
+
+            <div>
+                <span class="section-tag">
+                    Curated Journeys
+                </span>
+
+                <h2 class="section-title">
+                    Find Your Perfect<br>
+                    Kerala Journey.
+                </h2>
+            </div>
+
+            <p class="section-description">
+                From short escapes to unforgettable week-long journeys,
+                explore Kerala through experiences thoughtfully designed
+                for every kind of traveller.
+            </p>
+
+        </div>
+
+
+        <div class="package-grid">
+
+
+            <!-- PACKAGE 1 -->
+
+            <article class="package-card">
+
+                <div class="package-image">
+
+                    <img src="https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=900&q=85"
+                         alt="Kerala Backwaters">
+
+                    <div class="package-duration">
+                        3 Days / 2 Nights
+                    </div>
+
+                </div>
+
+
+                <div class="package-content">
+
+                    <div class="package-type">
+                        SHORT ESCAPE
+                    </div>
+
+                    <h3>
+                        Backwater Escape
+                    </h3>
+
+                    <p>
+                        Slow down and experience the peaceful beauty
+                        of Alleppey's backwaters and village life.
+                    </p>
+
+
+                    <div class="package-footer">
+
+                        <div class="package-price">
+                            <span>Starting from</span>
+                            ₹12,999
+                        </div>
+
+                        <a href="#contact" class="package-link">
+                            View Details →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PACKAGE 2 -->
+
+            <article class="package-card">
+
+                <div class="package-image">
+
+                    <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=900&q=85"
+                         alt="Munnar Hills">
+
+                    <div class="package-duration">
+                        4 Days / 3 Nights
+                    </div>
+
+                </div>
+
+
+                <div class="package-content">
+
+                    <div class="package-type">
+                        HILL ESCAPE
+                    </div>
+
+                    <h3>
+                        Munnar & Thekkady
+                    </h3>
+
+                    <p>
+                        Misty mountains, tea gardens and unforgettable
+                        encounters with Kerala's wild side.
+                    </p>
+
+
+                    <div class="package-footer">
+
+                        <div class="package-price">
+                            <span>Starting from</span>
+                            ₹18,999
+                        </div>
+
+                        <a href="#contact" class="package-link">
+                            View Details →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PACKAGE 3 -->
+
+            <article class="package-card">
+
+                <div class="package-image">
+
+                    <img src="https://images.unsplash.com/photo-1609947017136-9daf32a5eb16?auto=format&fit=crop&w=900&q=85"
+                         alt="Kerala Tour">
+
+                    <div class="package-duration">
+                        7 Days / 6 Nights
+                    </div>
+
+                </div>
+
+
+                <div class="package-content">
+
+                    <div class="package-type">
+                        SIGNATURE JOURNEY
+                    </div>
+
+                    <h3>
+                        Complete Kerala Journey
+                    </h3>
+
+                    <p>
+                        Experience mountains, wildlife, backwaters
+                        and beaches in one unforgettable journey.
+                    </p>
+
+
+                    <div class="package-footer">
+
+                        <div class="package-price">
+                            <span>Starting from</span>
+                            ₹34,999
+                        </div>
+
+                        <a href="#contact" class="package-link">
+                            View Details →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FEATURED JOURNEY
+========================== -->
+
+<section class="journey" id="journeys">
+
+    <div class="container">
+
+        <div class="journey-wrapper">
+
+
+            <div class="journey-image">
+
+                <img src="https://images.unsplash.com/photo-1609947017136-9daf32a5eb16?auto=format&fit=crop&w=1200&q=85">
+
+            </div>
+
+
+            <div class="journey-content">
+
+                <div class="journey-meta">
+                    07 Days • Featured Journey
+                </div>
+
+                <h2>
+                    Kerala<br>
+                    Slow Journey.
+                </h2>
+
+                <p>
+                    A carefully curated journey through Kerala's
+                    mountains, forests, backwaters and coastline.
+                </p>
+
+
+                <div class="journey-route">
+
+                    Kochi → Munnar → Thekkady → Alleppey → Varkala
+
+                </div>
+
+
+                <a href="#" class="btn btn-primary">
+
+                    Explore This Journey →
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     WHY MALABAR TRAILS
+========================== -->
+
+<section class="why" id="about">
+
+    <div class="container">
+
+        <span class="section-tag">
+            Why Travel With Us
+        </span>
+
+        <h2 class="section-title">
+            Travel, Thoughtfully.
+        </h2>
+
+
+        <div class="why-grid">
+
+
+            <div class="why-item">
+
+                <div class="why-number">
+                    01
+                </div>
+
+                <h3>
+                    Curated Journeys
+                </h3>
+
+                <p>
+                    Every journey is designed with meaningful
+                    experiences and beautiful moments in mind.
+                </p>
+
+            </div>
+
+
+            <div class="why-item">
+
+                <div class="why-number">
+                    02
+                </div>
+
+                <h3>
+                    Local Knowledge
+                </h3>
+
+                <p>
+                    Discover Kerala beyond tourist checklists
+                    with experiences inspired by local stories.
+                </p>
+
+            </div>
+
+
+            <div class="why-item">
+
+                <div class="why-number">
+                    03
+                </div>
+
+                <h3>
+                    Travel Your Way
+                </h3>
+
+                <p>
+                    Flexible journeys designed around your
+                    interests, pace and travel style.
+                </p>
+
+            </div>
+
+
+            <div class="why-item">
+
+                <div class="why-number">
+                    04
+                </div>
+
+                <h3>
+                    Meaningful Travel
+                </h3>
+
+                <p>
+                    Travel that helps you connect with places,
+                    people and the stories behind them.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     TESTIMONIAL
+========================== -->
+
+<section class="testimonial">
+
+    <div class="container">
+
+        <span class="section-tag">
+            Stories From The Trail
+        </span>
+
+        <blockquote class="quote">
+
+            “We didn't just visit Kerala.
+            We experienced it slowly,
+            beautifully and differently.”
+
+        </blockquote>
+
+        <div class="traveller">
+
+            Sarah & Daniel • London
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     TRAVEL INQUIRY
+========================== -->
+
+<section class="inquiry" id="contact">
+
+    <div class="container">
+
+        <div class="inquiry-wrapper">
+
+
+            <!-- LEFT CONTENT -->
+
+            <div class="inquiry-info">
+
+                <span class="section-tag">
+                    Start Planning
+                </span>
+
+                <h2>
+                    Tell Us About<br>
+                    Your Journey.
+                </h2>
+
+                <p>
+                    Share a few details about your dream Kerala trip,
+                    and our travel team will help you plan a journey
+                    that feels truly yours.
+                </p>
+
+
+                <div class="inquiry-details">
+
+                    <div>
+                        <span>Email Us</span>
+                        <strong>hello@malabartrails.com</strong>
+                    </div>
+
+                    <div>
+                        <span>Call Us</span>
+                        <strong>+91 98765 43210</strong>
+                    </div>
+
+                    <div>
+                        <span>Available</span>
+                        <strong>Monday – Saturday</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FORM -->
+
+            <form class="inquiry-form" id="inquiryForm">
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Enter your name"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="you@example.com"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="+91"
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Preferred Package</label>
+
+                        <select id="package">
+
+                            <option value="">
+                                Select a package
+                            </option>
+
+                            <option>
+                                Backwater Escape
+                            </option>
+
+                            <option>
+                                Munnar & Thekkady
+                            </option>
+
+                            <option>
+                                Complete Kerala Journey
+                            </option>
+
+                            <option>
+                                Custom Journey
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label>Number of Travellers</label>
+
+                        <select id="travellers">
+
+                            <option>
+                                1 Traveller
+                            </option>
+
+                            <option>
+                                2 Travellers
+                            </option>
+
+                            <option>
+                                3 - 5 Travellers
+                            </option>
+
+                            <option>
+                                6+ Travellers
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Travel Date</label>
+
+                        <input
+                            type="date"
+                            id="travelDate"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group full-width">
+
+                    <label>Tell Us More About Your Trip</label>
+
+                    <textarea
+                        id="message"
+                        rows="5"
+                        placeholder="Tell us about your preferred destinations, travel style or anything else..."
+                    ></textarea>
+
+                </div>
+
+
+                <button type="submit" class="btn btn-primary">
+
+                    Send Inquiry →
+
+                </button>
+
+
+                <p class="form-note">
+                    We'll get back to you as soon as possible.
+                </p>
+
+            </form>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     FOOTER
+========================== -->
+
+<footer>
+
+    <div class="container">
+
+
+        <div class="footer-grid">
+
+
+            <div class="footer-brand">
+
+                <h2>
+                    Malabar Trails
+                </h2>
+
+                <p>
+                    Thoughtfully curated journeys through
+                    the landscapes, stories and experiences
+                    of Kerala.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h4>
+                    Explore
+                </h4>
+
+                <ul>
+
+                    <li><a href="#">Munnar</a></li>
+                    <li><a href="#">Alleppey</a></li>
+                    <li><a href="#">Wayanad</a></li>
+                    <li><a href="#">Varkala</a></li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h4>
+                    Discover
+                </h4>
+
+                <ul>
+
+                    <li><a href="#">Journeys</a></li>
+                    <li><a href="#">Experiences</a></li>
+                    <li><a href="#">Stays</a></li>
+                    <li><a href="#">About Us</a></li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h4>
+                    Connect
+                </h4>
+
+                <ul>
+
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">WhatsApp</a></li>
+                    <li><a href="#">Email Us</a></li>
+
+                </ul>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 Malabar Trails. All rights reserved.
+            </span>
+
+            <span>
+                Designed for unforgettable journeys.
+            </span>
+
+        </div>
+
+
+    </div>
+
+</footer>
+
+  <!-- WHATSAPP FLOATING BUTTON -->
+
+<a
+    href="https://wa.me/919876543xxx"
+    class="whatsapp-float"
+    target="_blank"
+    aria-label="Chat with us on WhatsApp"
+>
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M16 3C8.83 3 3 8.73 3 15.78c0 2.5.74 4.83 2.02 6.8L3.7 29l6.6-1.72a13.2 13.2 0 0 0 5.7 1.28c7.17 0 13-5.73 13-12.78S23.17 3 16 3zm0 23.2c-1.85 0-3.65-.5-5.22-1.45l-.38-.23-3.92 1.02 1.05-3.72-.25-.39a10.38 10.38 0 0 1-1.6-5.65C5.68 10.08 10.3 5.5 16 5.5s10.32 4.58 10.32 10.28S21.7 26.2 16 26.2zm5.65-7.73c-.3-.15-1.76-.86-2.03-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.95 1.15-.17.2-.35.22-.65.07-.3-.15-1.25-.45-2.38-1.43-.88-.76-1.47-1.7-1.64-1.98-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.6-.91-2.2-.24-.57-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.46s1.06 2.86 1.2 3.06c.15.2 2.09 3.32 5.16 4.53.73.29 1.3.46 1.74.59.73.22 1.39.19 1.91.12.58-.09 1.76-.72 2.01-1.42.25-.69.25-1.28.17-1.41-.07-.12-.27-.2-.57-.35z"/>
+    </svg>
+</a>
+
+<script>
+    const header = document.querySelector("header");
+
+    window.addEventListener("scroll", function () {
+
+        if (window.scrollY > 50) {
+            header.classList.add("scrolled");
+        } else {
+            header.classList.remove("scrolled");
+        }
+
+    });
+</script>
+</body>
+</html>
