@@ -213,11 +213,138 @@ header.scrolled .menu-btn {
             border-radius: 50px;
         }
 
-        .menu-btn {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
+     /* =========================
+   HAMBURGER MENU
+========================== */
+
+.menu-btn {
+    display: none;
+    width: 42px;
+    height: 42px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    padding: 0;
+}
+
+.menu-btn span {
+    width: 24px;
+    height: 2px;
+    background: white;
+    display: block;
+
+    transition: 0.3s ease;
+}
+
+
+/* SCROLLED NAVBAR */
+
+header.scrolled .menu-btn span {
+    background: var(--primary);
+}
+
+
+/* =========================
+   MOBILE NAVBAR
+========================== */
+
+@media (max-width: 900px) {
+
+    .menu-btn {
+        display: flex;
+        position: relative;
+        z-index: 1002;
+    }
+
+    .nav-links {
+        position: fixed;
+
+        top: 0;
+        right: -100%;
+
+        width: min(320px, 85%);
+        height: 100vh;
+
+        background: var(--cream);
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 0;
+
+        padding: 110px 35px 40px;
+
+        box-shadow: -10px 0 40px rgba(0, 0, 0, 0.12);
+
+        transition: right 0.4s ease;
+
+        z-index: 1001;
+    }
+
+
+    /* OPEN MENU */
+
+    .nav-links.active {
+        right: 0;
+    }
+
+
+    .nav-links li {
+        width: 100%;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .nav-links li a {
+        display: block;
+
+        width: 100%;
+
+        padding: 17px 0;
+
+        color: var(--primary);
+
+        font-size: 0.95rem;
+    }
+
+
+    .nav-links .nav-cta {
+        display: inline-block;
+
+        width: auto;
+
+        margin-top: 20px;
+
+        padding: 12px 20px;
+
+        background: var(--primary);
+        color: white !important;
+
+        border: none;
+    }
+
+
+    /* HAMBURGER → X */
+
+    .menu-btn.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .menu-btn.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-btn.active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+}
 
 
         /* =========================
@@ -1276,12 +1403,13 @@ header.scrolled .menu-btn {
                 Malabar Trails
             </a>
 
-            <ul class="nav-links">
+            <ul class="nav-links" id="navLinks">
 
                 <li><a href="#home">Home</a></li>
                 <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#packages">Packages</a></li>
                 <li><a href="#experiences">Experiences</a></li>
-                <li><a href="#journeys">Journeys</a></li>
+                <li><a href="#fleet">Our Fleet</a></li>
                 <li><a href="#about">About</a></li>
 
                 <li>
@@ -1292,17 +1420,17 @@ header.scrolled .menu-btn {
 
             </ul>
 
-            <div class="menu-btn">
-                ☰
-            </div>
+            <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
         </nav>
 
     </div>
 
 </header>
-
-
 
 <!-- =========================
      HERO
@@ -2598,6 +2726,56 @@ header.scrolled .menu-btn {
         }
 
     });
+</script>
+    <script>
+
+    const header = document.querySelector("header");
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+
+    /* =========================
+       NAVBAR SCROLL
+    ========================== */
+
+    window.addEventListener("scroll", function () {
+
+        if (window.scrollY > 50) {
+            header.classList.add("scrolled");
+        } else {
+            header.classList.remove("scrolled");
+        }
+
+    });
+
+
+    /* =========================
+       MOBILE MENU TOGGLE
+    ========================== */
+
+    menuBtn.addEventListener("click", function () {
+
+        menuBtn.classList.toggle("active");
+        navLinks.classList.toggle("active");
+
+    });
+
+
+    /* =========================
+       CLOSE MENU AFTER CLICK
+    ========================== */
+
+    document.querySelectorAll(".nav-links a").forEach(function(link) {
+
+        link.addEventListener("click", function () {
+
+            menuBtn.classList.remove("active");
+            navLinks.classList.remove("active");
+
+        });
+
+    });
+
 </script>
 </body>
 </html>
