@@ -1087,6 +1087,173 @@ header.scrolled .menu-btn {
         bottom: 18px;
     }
 }
+        /* =========================
+   OUR FLEET
+========================== */
+
+.fleet {
+    background: white;
+}
+
+.fleet-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+
+/* GRID */
+
+.fleet-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+
+/* CARD */
+
+.vehicle-card {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    transition: 0.4s ease;
+}
+
+.vehicle-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(30, 58, 52, 0.10);
+}
+
+
+/* IMAGE */
+
+.vehicle-image {
+    height: 330px;
+    position: relative;
+    overflow: hidden;
+}
+
+.vehicle-image img {
+    height: 100%;
+    transition: transform 0.6s ease;
+}
+
+.vehicle-card:hover .vehicle-image img {
+    transform: scale(1.05);
+}
+
+
+/* NUMBER */
+
+.vehicle-number {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.9);
+    color: var(--primary);
+
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+
+/* CONTENT */
+
+.vehicle-content {
+    padding: 35px;
+}
+
+.vehicle-type {
+    display: block;
+
+    color: var(--sand);
+
+    font-size: 0.7rem;
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+
+    margin-bottom: 10px;
+}
+
+.vehicle-content h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 2.4rem;
+    font-weight: 600;
+
+    color: var(--primary);
+
+    line-height: 1;
+
+    margin-bottom: 18px;
+}
+
+.vehicle-content p {
+    color: var(--light-text);
+
+    font-size: 0.9rem;
+
+    margin-bottom: 25px;
+}
+
+
+/* DETAILS */
+
+.vehicle-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid var(--border);
+}
+
+.vehicle-details span {
+    padding: 7px 12px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 30px;
+
+    font-size: 0.7rem;
+
+    color: var(--primary);
+}
+        @media (max-width: 768px) {
+
+    .fleet-header {
+        display: block;
+    }
+
+    .fleet-header .section-description {
+        margin-top: 25px;
+    }
+
+    .fleet-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .vehicle-image {
+        height: 280px;
+    }
+
+}
 
     </style>
 </head>
@@ -1845,6 +2012,256 @@ header.scrolled .menu-btn {
         <div class="traveller">
 
             Sarah & Daniel • London
+
+        </div>
+
+    </div>
+
+</section>
+    <!-- =========================
+     OUR FLEET
+========================== -->
+
+<section class="fleet" id="fleet">
+
+    <div class="container">
+
+        <div class="fleet-header">
+
+            <div>
+
+                <span class="section-tag">
+                    Travel In Comfort
+                </span>
+
+                <h2 class="section-title">
+                    Every Journey<br>
+                    Begins With The Ride.
+                </h2>
+
+            </div>
+
+            <p class="section-description">
+
+                Whether you're travelling as a couple, with family,
+                or as a larger group, choose a comfortable way to
+                explore Kerala.
+
+            </p>
+
+        </div>
+
+
+        <div class="fleet-grid">
+
+
+            <!-- VEHICLE 1 -->
+
+            <article class="vehicle-card">
+
+                <div class="vehicle-image">
+
+                    <img
+                        src="YOUR-BUS-IMAGE.jpg"
+                        alt="Luxury Tourist Bus"
+                    >
+
+                    <div class="vehicle-number">
+                        01
+                    </div>
+
+                </div>
+
+
+                <div class="vehicle-content">
+
+                    <div>
+
+                        <span class="vehicle-type">
+                            GROUP TRAVEL
+                        </span>
+
+                        <h3>
+                            Luxury Tourist Bus
+                        </h3>
+
+                    </div>
+
+                    <p>
+                        Spacious and comfortable travel for large
+                        groups, tours and unforgettable journeys
+                        across Kerala.
+                    </p>
+
+
+                    <div class="vehicle-details">
+
+                        <span>Large Groups</span>
+                        <span>Comfort Seating</span>
+                        <span>AC Available</span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- VEHICLE 2 -->
+
+            <article class="vehicle-card">
+
+                <div class="vehicle-image">
+
+                    <img
+                        src="YOUR-TEMPO-IMAGE.jpg"
+                        alt="Tempo Traveller"
+                    >
+
+                    <div class="vehicle-number">
+                        02
+                    </div>
+
+                </div>
+
+
+                <div class="vehicle-content">
+
+                    <div>
+
+                        <span class="vehicle-type">
+                            FAMILY & GROUPS
+                        </span>
+
+                        <h3>
+                            Tempo Traveller
+                        </h3>
+
+                    </div>
+
+                    <p>
+                        Perfect for families and small groups looking
+                        for a relaxed and comfortable Kerala journey.
+                    </p>
+
+
+                    <div class="vehicle-details">
+
+                        <span>8–20 Seats</span>
+                        <span>AC Available</span>
+                        <span>Comfort Travel</span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- VEHICLE 3 -->
+
+            <article class="vehicle-card">
+
+                <div class="vehicle-image">
+
+                    <img
+                        src="YOUR-SUV-IMAGE.jpg"
+                        alt="Premium SUV"
+                    >
+
+                    <div class="vehicle-number">
+                        03
+                    </div>
+
+                </div>
+
+
+                <div class="vehicle-content">
+
+                    <div>
+
+                        <span class="vehicle-type">
+                            PRIVATE TRAVEL
+                        </span>
+
+                        <h3>
+                            Premium SUV
+                        </h3>
+
+                    </div>
+
+                    <p>
+                        A private and comfortable way to explore
+                        Kerala with flexibility and freedom.
+                    </p>
+
+
+                    <div class="vehicle-details">
+
+                        <span>1–6 Guests</span>
+                        <span>Private Travel</span>
+                        <span>AC Comfort</span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- VEHICLE 4 -->
+
+            <article class="vehicle-card">
+
+                <div class="vehicle-image">
+
+                    <img
+                        src="YOUR-SEDAN-IMAGE.jpg"
+                        alt="Premium Sedan"
+                    >
+
+                    <div class="vehicle-number">
+                        04
+                    </div>
+
+                </div>
+
+
+                <div class="vehicle-content">
+
+                    <div>
+
+                        <span class="vehicle-type">
+                            COUPLES & PRIVATE
+                        </span>
+
+                        <h3>
+                            Premium Sedan
+                        </h3>
+
+                    </div>
+
+                    <p>
+                        Ideal for couples and travellers who prefer
+                        a smooth, private and elegant journey.
+                    </p>
+
+
+                    <div class="vehicle-details">
+
+                        <span>1–4 Guests</span>
+                        <span>Private Travel</span>
+                        <span>AC Comfort</span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
 
         </div>
 
